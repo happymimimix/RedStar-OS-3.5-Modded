@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=konsole -e bash -c 'cd /root/Desktop/v3.5\ Update\ Combo; chmod +x ./scripts/*.sh; echo [Desktop Entry] > /root/.kde/Autostart/Up35.desktop; echo Encoding=UTF-8 >> /root/.kde/Autostart/Up35.desktop; echo Icon=unknown >> /root/.kde/Autostart/Up35.desktop; echo Type=Link >> /root/.kde/Autostart/Up35.desktop; echo URL=file:///root/Desktop/v3.5%20Update%20Combo/scripts/next.desktop >> /root/.kde/Autostart/Up35.desktop; ./scripts/1.sh'
+Terminal=false
+Name=v3.5 Update Combo
+Categories=Applocation
