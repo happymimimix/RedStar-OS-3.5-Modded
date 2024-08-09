@@ -3,6 +3,8 @@ error() {
 set +x
 rm -f '/root/Desktop/v3.5 Update Combo/scripts/next.desktop'
 kdialog --title "Failed To Install v3.5 Update Combo" --error "An error has occured during the installation. \nThis could be caused by incomplete installation of the development tools and libraries. Please make sure you've installed ALL packages under Development/Development tools and Development/Development libraries catagory using /Applications/Software Manager.app. \n\nThe installation script will now stop. "
+bash
+exit
 }
 Install() {
 set -x
