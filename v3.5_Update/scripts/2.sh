@@ -14,7 +14,7 @@ Install nettle-3.4.1 gz
 Install libtasn1-4.10 gz
 Install libunistring-1.1 gz
 Extract openssl-1.0.2u gz
-./config --prefix=/usr
+./config --openssldir=/usr/ssl
 make -j$(cat /proc/cpuinfo | grep "processor" | wc -l)
 make install
 CleanUp openssl-1.0.2u
