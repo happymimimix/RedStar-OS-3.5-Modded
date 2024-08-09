@@ -1,17 +1,15 @@
 #!/bin/bash
-
+set -x
 source '/root/Desktop/v3.5 Update Combo/scripts/pkgutils.sh'
 trap 'error' ERR
 set +e
-
-set -x
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/:/lib
 cd /workspace
 Extract glibc-2.29 xz
 mkdir build
 cd build
-../configure --prefix=/lib
+../configure --prefix=/lib --enable-add-ons --with-headers=/usr/include
 make -j$(cat /proc/cpuinfo | grep "processor" | wc -l)
 make Install
 cd ..
@@ -30,13 +28,13 @@ echo "Categories=Applocation" >> '/root/Desktop/v3.5 Update Combo/scripts/next.d
 set +x
 trap '' ERR
 for ((i = 5; i > 0; i--)); do
-    echo -ne "Press any key in $i to abort automatic reboot... \r"
-    read -rs -n 1 -t 1 key
-    if [[ $key ]]; then
-        echo -e "\nReboot aborted. "
-        sleep 1
-        exec bash
-    fi
+echo -ne "Press any key in $i to abort automatic reboot... \r"
+read -rs -n 1 -t 1 key
+if [[ $key ]]; then
+echo -e "\nReboot aborted. "
+sleep 1
+exec bash
+fi
 done
 echo -e "\nRebooting now... "
 sleep 1
