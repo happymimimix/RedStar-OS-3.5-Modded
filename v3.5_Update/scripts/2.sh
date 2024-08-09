@@ -35,6 +35,9 @@ InstallDef gnutls-3.3.30 xz
 Install wget-1.19.5 gz
 InstallDef binutils-2.32 xz
 Install m4-1.4.18 xz
+Install gmp-6.2.1 bz2
+Install mpfr-4.1.0 bz2
+Install mpc-1.2.1 gz
 Install gcc-6.5.0 xz
 Install autoconf-2.69 xz
 Install make-4.2 bz2
